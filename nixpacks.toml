@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["nodePackages.npm", "nodejs-20_x"]
+nixPkgs = ["nodePackages.npm", "nodejs_20"]
 
 [phases.install]
 cmds = ["npm install", "npx prisma generate"]
