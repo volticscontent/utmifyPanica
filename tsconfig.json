@@ -1,0 +1,8 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    "moduleResolution": "node",
+  },
+  "include": ["src/**/*", "prisma/**/*"]
+}

@@ -1,0 +1,14 @@
+{
+  "order_id": "TEST-CWU31A",
+  "product_id": "12345",
+  "product_name": "Produto de Teste BRL",
+  "amount": "37.00",
+  "currency": "BRL",
+  "payment_type": "credit_card",
+  "transaction_type": "sale",
+  "first_name": "Gabriel",
+  "last_name": "Salles",
+  "email": "gabriel@teste.com",
+  "utm_source": "CONTA_DESCONHECIDA",
+  "sha_sign": "66A89807CA44D83B2FF9363D9A4B74B9DF0F185B717FEFB03BB29867FD07281F"
+}

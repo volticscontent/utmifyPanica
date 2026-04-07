@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "library"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model UtmifyAccount {
+  id         String   @id @default(uuid())
+  name       String
+  apiKey     String
+  webhookUrl String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  pixelId    String?
+
+  mappings ProductMapping[]
+}
+
+model ProductMapping {
+  id                 String        @id @default(uuid())
+  digistoreProductId String        @unique
+  utmifyAccountId    String
+  utmifyAccount      UtmifyAccount @relation(fields: [utmifyAccountId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}
+
+model WebhookLog {
+  id             String   @id @default(uuid())
+  receivedAt     DateTime @default(now())
+  digistoreId    String?
+  payload        Json
+  status         String // 'SUCCESS', 'ERROR', 'FILTERED'
+  utmifyResponse Json?
+  errorMessage   String?
+}
