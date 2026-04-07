@@ -1,5 +1,5 @@
 import * as crypto from 'crypto';
-import type { UtmifySalePayload } from './utmify';
+import type { UtmifySalePayload } from './utmify.js';
 
 export interface DigistorePayload {
   [key: string]: string;

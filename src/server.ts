@@ -3,9 +3,9 @@ import Fastify from 'fastify';
 import * as fs from 'fs';
 import formbody from '@fastify/formbody';
 import cors from '@fastify/cors';
-import { prisma } from './lib/prisma';
-import { sendToUtmify } from './services/utmify';
-import { transformDigistoreToUtmify, verifyDigistoreSignature } from './services/transformer';
+import { prisma } from './lib/prisma.js';
+import { sendToUtmify } from './services/utmify.js';
+import { transformDigistoreToUtmify, verifyDigistoreSignature } from './services/transformer.js';
 
 const fastify = Fastify({ logger: true });
 
